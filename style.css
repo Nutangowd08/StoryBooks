@@ -60,7 +60,7 @@ footer {
 }
 .flip-card {
   background-color: transparent;
-  width: 100%;
+  width: 300%;
   max-width: 500px;
   height: 300px;
   perspective: 1000px;
