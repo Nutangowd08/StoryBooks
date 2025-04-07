@@ -38,7 +38,7 @@ header p {
 .page {
   margin-bottom: 1.5rem;
   width: 100%;
-  max-width: 500px; /* You can adjust this */
+  max-width: 500px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 10px;
   overflow: hidden;
@@ -58,11 +58,13 @@ footer {
   color: #333;
   font-size: 0.9rem;
 }
+
+/* ✅ Flip Card Styling */
 .flip-card {
   background-color: transparent;
-  width: 100px;
+  width: 100%;
   max-width: 500px;
-  height: 100px;
+  height: 300px;
   perspective: 1000px;
   margin-bottom: 2rem;
 }
@@ -71,12 +73,13 @@ footer {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 1s;
+  transition: transform 0.8s ease;
   transform-style: preserve-3d;
   cursor: pointer;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner,
+.flip-card:active .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -85,13 +88,14 @@ footer {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* iOS fix */
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.flip-card-front img {
+.flip-card-front img,
+.flip-card-back img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -99,17 +103,5 @@ footer {
 }
 
 .flip-card-back {
-  background: #fff6e5;
-  color: #333;
   transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  font-size: 1.2rem;
-  text-align: center;
 }
-
-
-
-
