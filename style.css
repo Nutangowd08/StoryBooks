@@ -62,7 +62,7 @@ footer {
   background-color: transparent;
   width: 100%;
   max-width: 500px;
-  height: 100px;
+  height: 100%;
   perspective: 1000px;
   margin-bottom: 2rem;
 }
