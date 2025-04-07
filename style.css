@@ -62,7 +62,7 @@ footer {
   background-color: transparent;
   width: 100%;
   max-width: 500px;
-  height: auto;
+  height: 300px;
   perspective: 1000px;
   margin-bottom: 2rem;
 }
@@ -70,7 +70,7 @@ footer {
 .flip-card-inner {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 300%;
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -84,6 +84,7 @@ footer {
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
+  height: 300%;
   backface-visibility: hidden;
   border-radius: 10px;
   overflow: hidden;
