@@ -37,8 +37,8 @@ header p {
 
 .page {
   margin-bottom: 1.5rem;
-  width: 90%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 500px; /* You can adjust this */
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 10px;
   overflow: hidden;
@@ -46,6 +46,7 @@ header p {
 
 .page img {
   width: 100%;
+  height: auto;
   display: block;
   border-radius: 10px;
 }
@@ -57,4 +58,3 @@ footer {
   color: #333;
   font-size: 0.9rem;
 }
-
