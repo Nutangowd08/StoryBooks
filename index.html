@@ -2,134 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Flipbook with Audio</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #fff7ed;
-      text-align: center;
-      margin: 0;
-      padding: 20px;
-    }
-
-    header, footer {
-      margin-bottom: 20px;
-    }
-
-    .book-container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .flip-card {
-      cursor: pointer;
-      width: 300px;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-
-    .flip-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 20px;
-    }
-
-    .arrow {
-      font-size: 2rem;
-      padding: 10px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: #555;
-    }
-
-    .left-arrow {
-      position: absolute;
-      left: -50px;
-    }
-
-    .right-arrow {
-      position: absolute;
-      right: -50px;
-    }
-
-    .page-number {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-  </style>
 </head>
 <body>
-
   <header>
     <h1>My Picture Book</h1>
     <p>Click on the page to flip and listen</p>
   </header>
 
-  <div class="book-container">
+  <main class="book-container">
     <button class="arrow left-arrow" onclick="prevPage()">&#8592;</button>
 
     <div class="flip-card" id="flipCard">
-      <img id="pageImage" src="images/1.jpg" alt="Page 1" />
+      <img id="pageImage" src="images/1.jpg" alt="Page 1"/>
     </div>
 
     <button class="arrow right-arrow" onclick="nextPage()">&#8594;</button>
-  </div>
 
-  <audio id="audioPlayer" src="audios/1.mp3"></audio>
+    <audio id="audioPlayer"></audio>
+  </main>
 
-  <div class="page-number" id="pageNumber">Page 1 of 11</div>
+  <div class="page-number" id="page-number">Page 1 of 11</div>
 
   <footer>
-    <p>&copy; 2025 Nutan Kumar | Created with ❤️</p>
+    <p>© 2025 Nuthan Kumar | Created with ❤️</p>
   </footer>
 
-  <script>
-    const totalPages = 11;
-let currentPage = 1;
-
-const imageElement = document.getElementById("pageImage");
-const audioElement = document.getElementById("audioPlayer");
-const flipCard = document.getElementById("flipCard");
-const pageNumber = document.getElementById("pageNumber");
-
-function updateContent() {
-  imageElement.src = `images/${currentPage}.jpg`;
-  imageElement.alt = `Page ${currentPage}`;
-  pageNumber.textContent = `Page ${currentPage} of ${totalPages}`;
-
-  if (currentPage >= 2 && currentPage <= 10) {
-    audioElement.src = `audios/${currentPage}.mp3`;
-    audioElement.play();
-  } else {
-    // Pause and reset audio if it's cover or end page
-    audioElement.pause();
-    audioElement.src = "";
-  }
-}
-
-flipCard.addEventListener("click", () => {
-  currentPage = currentPage < totalPages ? currentPage + 1 : 1;
-  updateContent();
-});
-
-function prevPage() {
-  currentPage = currentPage > 1 ? currentPage - 1 : totalPages;
-  updateContent();
-}
-
-function nextPage() {
-  currentPage = currentPage < totalPages ? currentPage + 1 : 1;
-  updateContent();
-}
-
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
