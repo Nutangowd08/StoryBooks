@@ -11,8 +11,8 @@ function updateContent() {
   imageElement.alt = `Page ${currentPage}`;
   pageNumber.textContent = `Page ${currentPage} of ${totalPages}`;
 
-  // Play audio only for pages 2–10
-  if (currentPage >= 2 && currentPage <= 10) {
+  // Play audio only for pages 2–11
+  if (currentPage >= 2 && currentPage <= 11) {
     audioElement.src = `audios/${currentPage}.mp3`;
     audioElement.play();
   } else {
