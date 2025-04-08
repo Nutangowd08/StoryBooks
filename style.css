@@ -1,3 +1,4 @@
+/* style.css */
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +10,12 @@ body {
   background: #fef8f0;
   color: #333;
   line-height: 1.6;
+  text-align: center;
 }
 
 header {
   background: #f9d976;
   padding: 1.5rem;
-  text-align: center;
   border-bottom: 3px solid #f7c548;
 }
 
@@ -28,86 +29,34 @@ header p {
   margin-top: 0.5rem;
 }
 
-.gallery {
+.book-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 2rem;
+  min-height: 60vh;
 }
 
-.page {
-  margin-bottom: 1.5rem;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.page img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #f7c548;
-  color: #333;
-  font-size: 0.9rem;
-}
-
-/* ✅ Flip Card Styling */
-.page,
 .flip-card {
   width: 100%;
   max-width: 500px;
-  aspect-ratio: 1 / 1; /* Ensures 1:1 ratio */
+  height: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  margin-bottom: 1.5rem;
-}
-
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s ease;
-  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
   cursor: pointer;
 }
 
-.flip-card:hover .flip-card-inner,
-.flip-card:active .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
+.flip-card img {
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  border-radius: 10px;
-  overflow: hidden;
+  object-fit: cover;
 }
 
-.page img,
-.flip-card-front img,
-.flip-card-back img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Fills square box nicely */
-  display: block;
-  border-radius: 10px;
-}
-
-
-.flip-card-back {
-  transform: rotateY(180deg);
+footer {
+  background: #f7c548;
+  color: #333;
+  padding: 1rem;
+  font-size: 0.9rem;
 }
