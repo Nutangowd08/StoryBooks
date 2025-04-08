@@ -13,7 +13,7 @@ function updateContent() {
 
   // Play audio only for pages 2–11
   if (currentPage >= 2 && currentPage <= 11) {
-    audioElement.src = `audios/${currentPage}.mp3`;
+    audioElement.src = `audios/${currentPage-1}.mp3`;
     audioElement.play();
   } else {
     audioElement.pause();
