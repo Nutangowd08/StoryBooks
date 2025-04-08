@@ -16,7 +16,7 @@
     <div class="flip-card" id="flipCard">
       <img id="pageImage" src="images/1.jpg" alt="Page 1" />
     </div>
-    <audio id="audioPlayer" src="audio/1.mp3"></audio>
+    <audio id="audioPlayer" src="audios/1.mp3"></audio>
   </main>
 
   <footer>
@@ -35,7 +35,7 @@
       currentPage = currentPage < totalPages ? currentPage + 1 : 1;
       imageElement.src = `images/${currentPage}.jpg`;
       imageElement.alt = `Page ${currentPage}`;
-      audioElement.src = `audio/${currentPage}.mp3`;
+      audioElement.src = `audios/${currentPage}.mp3`;
       audioElement.play();
     });
   </script>
