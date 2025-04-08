@@ -7,127 +7,37 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+ <header>
     <h1>📖 Nuthan's Picture StoryBook</h1>
     <p>Fun and colorful stories for kids</p>
   </header>
 
-  <main class="gallery">
-  <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/1.jpg" alt="Cover">
+  <main class="book-container">
+    <div class="flip-card" id="flipCard">
+      <img id="pageImage" src="images/1.jpg" alt="Page 1" />
     </div>
-    <div class="flip-card-back">
-      <img src="images/1.jpg" alt="Cover Back">
-    </div>
-  </div>
-</div>
-   <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/2.jpg" alt="Page1">
-    </div>
-    <div class="flip-card-back">
-      <img src="images/2.jpg" alt="Page1 Back">
-    </div>
-  </div>
-</div>
-    <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/3.jpg" alt="Page2">
-    </div>
-    <div class="flip-card-back">
-      <img src="images/3.jpg" alt="Page2 Back">
-    </div>
-  </div>
-</div>
-    <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/4.jpg" alt="Page3">
-    </div>
-    <div class="flip-card-back">
-      <img src="images/4.jpg" alt="Page3 Back">
-    </div>
-  </div>
-</div>
-   <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/5.jpg" alt="Page4">
-    </div>
-    <div class="flip-card-back">
-      <img src="images/5.jpg" alt="Page4 Back">
-    </div>
-  </div>
-</div>
-   <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/6.jpg" alt="Page5">
-    </div>
-    <div class="flip-card-back">
-      <img src="images/6.jpg" alt="Page5 Back">
-    </div>
-  </div>
-</div>
-  <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/7.jpg" alt="Page6">
-    </div>
-    <div class="flip-card-back">
-      <img src="images/7.jpg" alt="Page6 Back">
-    </div>
-  </div>
-</div>  
-  <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/8.jpg" alt="Page7">
-    </div>
-    <div class="flip-card-back">
-      <img src="images/8.jpg" alt="Page7 Back">
-    </div>
-  </div>
-</div>
- <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/9.jpg" alt="Page8">
-    </div>
-    <div class="flip-card-back">
-      <img src="images/9.jpg" alt="Page8 Back">
-    </div>
-  </div>
-</div>
-  <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/10.jpg" alt="Page9">
-    </div>
-    <div class="flip-card-back">
-      <img src="images/10.jpg" alt="Page9 Back">
-    </div>
-  </div>
-</div>
-  <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="images/11.jpg" alt="End Page">
-    </div>
-    <div class="flip-card-back">
-      <img src="images/11.jpg" alt="End Page Back">
-    </div>
-  </div>
-</div>
+    <audio id="audioPlayer" src="audio/1.mp3"></audio>
   </main>
 
   <footer>
     <p>&copy; 2025 Nutan Kumar | Made with ❤️ for kids</p>
   </footer>
+
+  <script>
+    const totalPages = 11;
+    let currentPage = 1;
+
+    const imageElement = document.getElementById("pageImage");
+    const audioElement = document.getElementById("audioPlayer");
+    const flipCard = document.getElementById("flipCard");
+
+    flipCard.addEventListener("click", () => {
+      currentPage = currentPage < totalPages ? currentPage + 1 : 1;
+      imageElement.src = `images/${currentPage}.jpg`;
+      imageElement.alt = `Page ${currentPage}`;
+      audioElement.src = `audio/${currentPage}.mp3`;
+      audioElement.play();
+    });
+  </script>
 </body>
 </html>
-
